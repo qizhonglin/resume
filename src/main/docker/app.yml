@@ -1,0 +1,21 @@
+version: '2'
+services:
+    resume-app:
+        image: resume
+        external_links:
+            - resume-postgresql:postgresql
+            - resume-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/resume
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    resume-postgresql:
+        extends:
+            file: postgresql.yml
+            service: resume-postgresql
+    resume-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: resume-elasticsearch

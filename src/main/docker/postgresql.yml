@@ -1,0 +1,12 @@
+version: '2'
+services:
+    resume-postgresql:
+        container_name: resume-postgresql
+        image: postgres:9.5.1
+        # volumes:
+        #     - ~/volumes/jhipster/resume/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=resume
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
