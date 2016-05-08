@@ -7,6 +7,15 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "resumeInfo": "Resume Info",
+                "resumeProfile": "Resume Profile",
+                "resumeExperienceProjectAccomplish": "Resume Experience Project Accomplish",
+                "resumeExperienceProject": "Resume Experience Project",
+                "resumeExperience": "Resume Experience",
+                "resumeSkill": "Resume Skill",
+                "resumePaper": "Resume Paper",
+                "resumeEducation": "Resume Education",
+                "resume": "Resume",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

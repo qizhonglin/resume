@@ -1,0 +1,53 @@
+
+<div>
+    <h2><span translate="resumeApp.resumeExperienceProject.detail.title">Resume Experience Project</span> {{vm.resumeExperienceProject.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="resumeApp.resumeExperienceProject.index">Index</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProject.index}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProject.name">Name</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProject.name}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProject.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProject.startTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProject.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProject.endTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProject.introduction">Introduction</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProject.introduction}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProject.responsiility">Responsiility</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProject.responsiility}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProject.platform">Platform</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProject.platform}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProject.experience">Experience</span></dt>
+        <dd>
+            <a ui-sref="resume-experience-detail({id:vm.resumeExperienceProject.experience.id})">{{vm.resumeExperienceProject.experience.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

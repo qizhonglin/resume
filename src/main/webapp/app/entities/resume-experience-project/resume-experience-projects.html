@@ -1,0 +1,89 @@
+<div>
+    <h2 translate="resumeApp.resumeExperienceProject.home.title">Resume Experience Projects</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="resume-experience-project.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="resumeApp.resumeExperienceProject.home.createLabel">
+                        Create new Resume Experience Project
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'resumeApp.resumeExperienceProject.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.index">Index</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.name">Name</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.startTime">Start Time</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.endTime">End Time</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.introduction">Introduction</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.responsiility">Responsiility</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.platform">Platform</span></th>
+                    <th><span translate="resumeApp.resumeExperienceProject.experience">Experience</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="resumeExperienceProject in vm.resumeExperienceProjects track by resumeExperienceProject.id">
+                    <td><a ui-sref="resume-experience-project-detail({id:resumeExperienceProject.id})">{{resumeExperienceProject.id}}</a></td>
+                    <td>{{resumeExperienceProject.index}}</td>
+                    <td>{{resumeExperienceProject.name}}</td>
+                    <td>{{resumeExperienceProject.startTime | date:'medium'}}</td>
+                    <td>{{resumeExperienceProject.endTime | date:'medium'}}</td>
+                    <td>{{resumeExperienceProject.introduction}}</td>
+                    <td>{{resumeExperienceProject.responsiility}}</td>
+                    <td>{{resumeExperienceProject.platform}}</td>
+                    <td>
+                        <a ui-sref="resume-experience-detail({id:resumeExperienceProject.experience.id})">{{resumeExperienceProject.experience.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="resume-experience-project-detail({id:resumeExperienceProject.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resume-experience-project.edit({id:resumeExperienceProject.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resume-experience-project.delete({id:resumeExperienceProject.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

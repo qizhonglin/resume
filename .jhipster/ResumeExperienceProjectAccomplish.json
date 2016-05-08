@@ -1,0 +1,26 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "project",
+      "otherEntityName": "resumeExperienceProject",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "accomplish",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 1024
+    }
+  ],
+  "changelogDate": "20160507090330",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

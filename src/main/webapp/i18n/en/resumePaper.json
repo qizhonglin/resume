@@ -1,0 +1,23 @@
+{
+    "resumeApp": {
+        "resumePaper" : {
+            "home": {
+                "title": "Resume Papers",
+                "createLabel": "Create a new Resume Paper",
+                "createOrEditLabel": "Create or edit a Resume Paper",
+                "search": "Search for Resume Paper"
+            },
+            "created": "A new Resume Paper is created with identifier {{ param }}",
+            "updated": "A Resume Paper is updated with identifier {{ param }}",
+            "deleted": "A Resume Paper is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Resume Paper {{ id }}?"
+            },
+            "detail": {
+                "title": "Resume Paper"
+            },
+            "paper": "Paper",
+            "resume": "Resume"
+        }
+    }
+}

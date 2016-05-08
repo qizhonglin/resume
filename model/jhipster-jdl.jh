@@ -1,0 +1,77 @@
+entity Resume {
+	infoEmail String required,
+    infoPhone String required,
+    infoGithub String,
+    infoLinkedin String,
+    
+    profileBasic String maxlength(1024),
+    profileTechniqueDomain String maxlength(1024),
+    profileSoftwareSystem String maxlength(1024),
+    profileMultibranchExperience String maxlength(1024),
+    profilePreferredPosition String maxlength(1024)
+}
+relationship OneToOne {
+	Resume{user(login)} to User
+}
+
+
+entity ResumeExperienceProjectAccomplish {
+	accomplish String maxlength(1024)
+}
+
+entity ResumeExperienceProject {
+	index Integer required,
+    name String required,
+    startTime ZonedDateTime,
+    endTime ZonedDateTime, 
+    introduction String required maxlength(1024)
+    responsiility String required maxlength(1024)
+    platform String required maxlength(1024)
+}
+relationship OneToMany {
+	ResumeExperienceProject{accomplish} to ResumeExperienceProjectAccomplish{project}
+}
+
+entity ResumeExperience {
+	index Integer required,
+    position String required,
+    company String required,
+    startTime ZonedDateTime required
+    endTime ZonedDateTime
+}
+relationship OneToMany {
+	ResumeExperience{project} to ResumeExperienceProject{experience}
+}
+relationship OneToMany {
+	Resume{experience} to ResumeExperience{resume}
+}
+
+entity ResumeSkill {
+	skill String maxlength(1024)
+}
+relationship OneToMany {
+	Resume{skill} to ResumeSkill{resume}
+}
+
+entity ResumePaper {
+	paper String maxlength(1024)
+}
+relationship OneToMany {
+	Resume{paper} to ResumePaper{resume}
+}
+
+entity ResumeEducation {
+	major String required,
+    university String required,
+    startTime ZonedDateTime required,
+    endTime ZonedDateTime required
+}
+relationship OneToMany {
+	Resume{educaton} to ResumeEducation{resume}
+}
+
+service Resume with serviceClass
+
+
+	
+	

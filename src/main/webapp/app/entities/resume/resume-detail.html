@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span translate="resumeApp.resume.detail.title">Resume</span> {{vm.resume.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="resumeApp.resume.infoEmail">Info Email</span></dt>
+        <dd>
+            <span>{{vm.resume.infoEmail}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.infoPhone">Info Phone</span></dt>
+        <dd>
+            <span>{{vm.resume.infoPhone}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.infoGithub">Info Github</span></dt>
+        <dd>
+            <span>{{vm.resume.infoGithub}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.infoLinkedin">Info Linkedin</span></dt>
+        <dd>
+            <span>{{vm.resume.infoLinkedin}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.profileBasic">Profile Basic</span></dt>
+        <dd>
+            <span>{{vm.resume.profileBasic}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.profileTechniqueDomain">Profile Technique Domain</span></dt>
+        <dd>
+            <span>{{vm.resume.profileTechniqueDomain}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.profileSoftwareSystem">Profile Software System</span></dt>
+        <dd>
+            <span>{{vm.resume.profileSoftwareSystem}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.profileMultibranchExperience">Profile Multibranch Experience</span></dt>
+        <dd>
+            <span>{{vm.resume.profileMultibranchExperience}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.profilePreferredPosition">Profile Preferred Position</span></dt>
+        <dd>
+            <span>{{vm.resume.profilePreferredPosition}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resume.user">User</span></dt>
+        <dd>
+            {{vm.resume.user.login}}
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

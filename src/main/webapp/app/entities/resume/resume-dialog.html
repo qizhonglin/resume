@@ -1,0 +1,128 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myResumeLabel" translate="resumeApp.resume.home.createOrEditLabel">Create or edit a Resume</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.resume.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.resume.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.infoEmail" for="field_infoEmail">Info Email</label>
+            <input type="text" class="form-control" name="infoEmail" id="field_infoEmail"
+                    ng-model="vm.resume.infoEmail"
+                    required />
+            <div ng-show="editForm.infoEmail.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.infoEmail.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.infoPhone" for="field_infoPhone">Info Phone</label>
+            <input type="text" class="form-control" name="infoPhone" id="field_infoPhone"
+                    ng-model="vm.resume.infoPhone"
+                    required />
+            <div ng-show="editForm.infoPhone.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.infoPhone.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.infoGithub" for="field_infoGithub">Info Github</label>
+            <input type="text" class="form-control" name="infoGithub" id="field_infoGithub"
+                    ng-model="vm.resume.infoGithub"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.infoLinkedin" for="field_infoLinkedin">Info Linkedin</label>
+            <input type="text" class="form-control" name="infoLinkedin" id="field_infoLinkedin"
+                    ng-model="vm.resume.infoLinkedin"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.profileBasic" for="field_profileBasic">Profile Basic</label>
+            <input type="text" class="form-control" name="profileBasic" id="field_profileBasic"
+                    ng-model="vm.resume.profileBasic"
+                    ng-maxlength="1024" />
+            <div ng-show="editForm.profileBasic.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.profileBasic.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1024">
+                    This field cannot be longer than 1024 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.profileTechniqueDomain" for="field_profileTechniqueDomain">Profile Technique Domain</label>
+            <input type="text" class="form-control" name="profileTechniqueDomain" id="field_profileTechniqueDomain"
+                    ng-model="vm.resume.profileTechniqueDomain"
+                    ng-maxlength="1024" />
+            <div ng-show="editForm.profileTechniqueDomain.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.profileTechniqueDomain.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1024">
+                    This field cannot be longer than 1024 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.profileSoftwareSystem" for="field_profileSoftwareSystem">Profile Software System</label>
+            <input type="text" class="form-control" name="profileSoftwareSystem" id="field_profileSoftwareSystem"
+                    ng-model="vm.resume.profileSoftwareSystem"
+                    ng-maxlength="1024" />
+            <div ng-show="editForm.profileSoftwareSystem.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.profileSoftwareSystem.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1024">
+                    This field cannot be longer than 1024 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.profileMultibranchExperience" for="field_profileMultibranchExperience">Profile Multibranch Experience</label>
+            <input type="text" class="form-control" name="profileMultibranchExperience" id="field_profileMultibranchExperience"
+                    ng-model="vm.resume.profileMultibranchExperience"
+                    ng-maxlength="1024" />
+            <div ng-show="editForm.profileMultibranchExperience.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.profileMultibranchExperience.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1024">
+                    This field cannot be longer than 1024 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="resumeApp.resume.profilePreferredPosition" for="field_profilePreferredPosition">Profile Preferred Position</label>
+            <input type="text" class="form-control" name="profilePreferredPosition" id="field_profilePreferredPosition"
+                    ng-model="vm.resume.profilePreferredPosition"
+                    ng-maxlength="1024" />
+            <div ng-show="editForm.profilePreferredPosition.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.profilePreferredPosition.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1024">
+                    This field cannot be longer than 1024 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="resumeApp.resume.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.resume.user" ng-options="user as user.login for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

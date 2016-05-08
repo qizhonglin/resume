@@ -1,0 +1,61 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "project",
+      "otherEntityName": "resumeExperienceProject",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "experience"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "resume",
+      "otherEntityName": "resume",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "index",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "position",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "company",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "startTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "endTime",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "changelogDate": "20160507090332",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

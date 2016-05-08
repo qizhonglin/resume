@@ -1,0 +1,30 @@
+{
+    "resumeApp": {
+        "resumeExperienceProject" : {
+            "home": {
+                "title": "Resume Experience Projects",
+                "createLabel": "Create a new Resume Experience Project",
+                "createOrEditLabel": "Create or edit a Resume Experience Project",
+                "search": "Search for Resume Experience Project"
+            },
+            "created": "A new Resume Experience Project is created with identifier {{ param }}",
+            "updated": "A Resume Experience Project is updated with identifier {{ param }}",
+            "deleted": "A Resume Experience Project is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Resume Experience Project {{ id }}?"
+            },
+            "detail": {
+                "title": "Resume Experience Project"
+            },
+            "index": "Index",
+            "name": "Name",
+            "startTime": "Start Time",
+            "endTime": "End Time",
+            "introduction": "Introduction",
+            "responsiility": "Responsiility",
+            "platform": "Platform",
+            "accomplish": "Accomplish",
+            "experience": "Experience"
+        }
+    }
+}

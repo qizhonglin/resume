@@ -1,0 +1,23 @@
+{
+    "resumeApp": {
+        "resumeExperienceProjectAccomplish" : {
+            "home": {
+                "title": "Resume Experience Project Accomplishes",
+                "createLabel": "Create a new Resume Experience Project Accomplish",
+                "createOrEditLabel": "Create or edit a Resume Experience Project Accomplish",
+                "search": "Search for Resume Experience Project Accomplish"
+            },
+            "created": "A new Resume Experience Project Accomplish is created with identifier {{ param }}",
+            "updated": "A Resume Experience Project Accomplish is updated with identifier {{ param }}",
+            "deleted": "A Resume Experience Project Accomplish is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Resume Experience Project Accomplish {{ id }}?"
+            },
+            "detail": {
+                "title": "Resume Experience Project Accomplish"
+            },
+            "accomplish": "Accomplish",
+            "project": "Project"
+        }
+    }
+}

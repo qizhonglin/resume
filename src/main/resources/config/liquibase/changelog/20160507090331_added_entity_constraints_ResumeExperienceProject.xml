@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ResumeExperienceProject.
+    -->
+    <changeSet id="20160507090331-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="experience_id"
+                                 baseTableName="resume_experience_project"
+                                 constraintName="fk_resumeexperienceproject_experience_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="resume_experience"/>
+
+    </changeSet>
+</databaseChangeLog>

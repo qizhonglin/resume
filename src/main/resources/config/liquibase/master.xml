@@ -5,6 +5,20 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090329_added_entity_Resume.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090330_added_entity_ResumeExperienceProjectAccomplish.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090331_added_entity_ResumeExperienceProject.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090332_added_entity_ResumeExperience.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090333_added_entity_ResumeSkill.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090334_added_entity_ResumePaper.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090335_added_entity_ResumeEducation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160507090329_added_entity_constraints_Resume.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090330_added_entity_constraints_ResumeExperienceProjectAccomplish.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090331_added_entity_constraints_ResumeExperienceProject.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090332_added_entity_constraints_ResumeExperience.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090333_added_entity_constraints_ResumeSkill.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090334_added_entity_constraints_ResumePaper.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160507090335_added_entity_constraints_ResumeEducation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

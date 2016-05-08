@@ -1,0 +1,85 @@
+<div>
+    <h2 translate="resumeApp.resumeExperience.home.title">Resume Experiences</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="resume-experience.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="resumeApp.resumeExperience.home.createLabel">
+                        Create new Resume Experience
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'resumeApp.resumeExperience.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="resumeApp.resumeExperience.index">Index</span></th>
+                    <th><span translate="resumeApp.resumeExperience.position">Position</span></th>
+                    <th><span translate="resumeApp.resumeExperience.company">Company</span></th>
+                    <th><span translate="resumeApp.resumeExperience.startTime">Start Time</span></th>
+                    <th><span translate="resumeApp.resumeExperience.endTime">End Time</span></th>
+                    <th><span translate="resumeApp.resumeExperience.resume">Resume</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="resumeExperience in vm.resumeExperiences track by resumeExperience.id">
+                    <td><a ui-sref="resume-experience-detail({id:resumeExperience.id})">{{resumeExperience.id}}</a></td>
+                    <td>{{resumeExperience.index}}</td>
+                    <td>{{resumeExperience.position}}</td>
+                    <td>{{resumeExperience.company}}</td>
+                    <td>{{resumeExperience.startTime | date:'medium'}}</td>
+                    <td>{{resumeExperience.endTime | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="resume-detail({id:resumeExperience.resume.id})">{{resumeExperience.resume.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="resume-experience-detail({id:resumeExperience.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resume-experience.edit({id:resumeExperience.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resume-experience.delete({id:resumeExperience.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

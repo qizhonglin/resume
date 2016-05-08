@@ -1,0 +1,118 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "login",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "resume"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "experience",
+      "otherEntityName": "resumeExperience",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "resume"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "skill",
+      "otherEntityName": "resumeSkill",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "resume"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "paper",
+      "otherEntityName": "resumePaper",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "resume"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "educaton",
+      "otherEntityName": "resumeEducation",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "resume"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "infoEmail",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "infoPhone",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "infoGithub",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "infoLinkedin",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "profileBasic",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 1024
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "profileTechniqueDomain",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 1024
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "profileSoftwareSystem",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 1024
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "profileMultibranchExperience",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 1024
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "profilePreferredPosition",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 1024
+    }
+  ],
+  "changelogDate": "20160507090329",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass"
+}

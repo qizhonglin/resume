@@ -1,0 +1,23 @@
+
+<div>
+    <h2><span translate="resumeApp.resumeExperienceProjectAccomplish.detail.title">Resume Experience Project Accomplish</span> {{vm.resumeExperienceProjectAccomplish.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="resumeApp.resumeExperienceProjectAccomplish.accomplish">Accomplish</span></dt>
+        <dd>
+            <span>{{vm.resumeExperienceProjectAccomplish.accomplish}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperienceProjectAccomplish.project">Project</span></dt>
+        <dd>
+            <a ui-sref="resume-experience-project-detail({id:vm.resumeExperienceProjectAccomplish.project.id})">{{vm.resumeExperienceProjectAccomplish.project.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

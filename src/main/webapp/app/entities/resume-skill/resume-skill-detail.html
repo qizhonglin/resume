@@ -1,0 +1,23 @@
+
+<div>
+    <h2><span translate="resumeApp.resumeSkill.detail.title">Resume Skill</span> {{vm.resumeSkill.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="resumeApp.resumeSkill.skill">Skill</span></dt>
+        <dd>
+            <span>{{vm.resumeSkill.skill}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeSkill.resume">Resume</span></dt>
+        <dd>
+            <a ui-sref="resume-detail({id:vm.resumeSkill.resume.id})">{{vm.resumeSkill.resume.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,207 @@
+<!--<div>
+    <h2 translate="resumeApp.resume.home.title">Resumes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="resume.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="resumeApp.resume.home.createLabel">
+                        Create new Resume
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'resumeApp.resume.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="resumeApp.resume.infoEmail">Info Email</span></th>
+                    <th><span translate="resumeApp.resume.infoPhone">Info Phone</span></th>
+                    <th><span translate="resumeApp.resume.infoGithub">Info Github</span></th>
+                    <th><span translate="resumeApp.resume.infoLinkedin">Info Linkedin</span></th>
+                    <th><span translate="resumeApp.resume.profileBasic">Profile Basic</span></th>
+                    <th><span translate="resumeApp.resume.profileTechniqueDomain">Profile Technique Domain</span></th>
+                    <th><span translate="resumeApp.resume.profileSoftwareSystem">Profile Software System</span></th>
+                    <th><span translate="resumeApp.resume.profileMultibranchExperience">Profile Multibranch Experience</span></th>
+                    <th><span translate="resumeApp.resume.profilePreferredPosition">Profile Preferred Position</span></th>
+                    <th><span translate="resumeApp.resume.user">User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="resume in vm.resumes track by resume.id">
+                    <td><a ui-sref="resume-detail({id:resume.id})">{{resume.id}}</a></td>
+                    <td>{{resume.infoEmail}}</td>
+                    <td>{{resume.infoPhone}}</td>
+                    <td>{{resume.infoGithub}}</td>
+                    <td>{{resume.infoLinkedin}}</td>
+                    <td>{{resume.profileBasic}}</td>
+                    <td>{{resume.profileTechniqueDomain}}</td>
+                    <td>{{resume.profileSoftwareSystem}}</td>
+                    <td>{{resume.profileMultibranchExperience}}</td>
+                    <td>{{resume.profilePreferredPosition}}</td>
+                    <td>
+                        {{resume.user.login}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="resume-detail({id:resume.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resume.edit({id:resume.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resume.delete({id:resume.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+
+
+<div class="container">
+    <div id="top" class="row resume">
+        <div class="col-md-9">
+            <h1 id="resumename" class="resume-name">QIZHONG LIN</h1>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Email: <a href="mailto:{{vm.resume.info.email}}">{{vm.resume.info.email}}</a></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="pull-right-md">Phone: {{vm.resume.info.phone}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>GitHub: <a href={{vm.resume.info.github}}>{{vm.resume.info.github}}</a></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="pull-right-md">Linked in: <a href={{vm.resume.info.linkedin}}>{{vm.resume.info.linkedin}}</a></p>
+                </div>
+            </div>
+
+            <h3 id="profile" class="page-header" data-toggle="collapse" href="#collapseProfiles" >PROFILE</h3>
+            <dl class="dl-horizontal collapse in" id="collapseProfiles">
+                <div ng-repeat="(key, value) in vm.resume.profile">
+                    <dt>{{key}}</dt>
+                    <dd class="text-justify">{{value}}</dd>
+                </div>
+            </dl>
+
+            <h3 id="experiences" class="page-header" data-toggle="collapse" href="#collapseExperiences">PROFESSIONAL EXPERIENCES</h3>
+            <div class="experiences collapse in" id="collapseExperiences">
+                <div class="experience" ng-repeat="experience in vm.resume.experiences" >
+                    <div id="experience{{$index}}" class="row experience-header" data-toggle="collapse" href="#collpaseExperience{{experience.index}}">
+                        <div class="col-md-3"><h4>{{experience.position}}</h4></div>
+                        <div class="col-md-5"><h4>{{experience.company}}</h4></div>
+                        <div class="col-md-4"><h4 class="text-right-md">{{experience.time}}</h4></div>
+                    </div>
+                    <div class="collapse in" id="collpaseExperience{{experience.index}}">
+                        <div class="project" ng-repeat="project in experience.projects" >
+                            <div id="project{{experience.index}}{{project.index}}" class="row project-header" data-toggle="collapse" href="#collpaseProject{{experience.index}}{{project.index}}">
+                                <div ng-show="project.time">
+                                    <div class="col-md-9"><p><em>Research Project:</em>{{project.name}}</p></div>
+                                    <div class="col-md-3"><p class="text-right-md">{{project.time}}</p></div>
+                                </div>
+                                <div ng-hide="project.time">
+                                    <div class="col-md-12"><p><em>Research Project:</em>{{project.name}}</p></div>
+                                </div>
+                            </div>
+                            <div class="collapse in" id="collpaseProject{{experience.index}}{{project.index}}">
+                                <p class="text-justify"><em>Introduction: </em>{{project.introduction}}</p>
+                                <p class="text-justify"><em>Responsibility: </em>{{project.responsibility}}</p>
+                                <p class="text-justify"><em>Development platform and tools: </em>{{project.platform}}</p>
+                                <h5><em>Key Accomplish:</em></h5>
+                                <ul >
+                                    <li  class="text-justify" ng-repeat="accomplish in project.accomplishes">{{accomplish}}</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h3 id="skills" class="page-header" data-toggle="collapse" href="#collapseSkills">SKILLS</h3>
+            <ul class="collapse in" id="collapseSkills" >
+                <li class="text-justify" ng-repeat="skill in vm.resume.skills" ng-bind-html="skill"></li>
+            </ul>
+
+            <h3 id="papers" class="page-header" data-toggle="collapse" href="#collapsePapers">PAPERS & PUBLICATIONS</h3>
+            <ol class="collapse in" id="collapsePapers">
+                <li class="text-justify" ng-repeat="paper in vm.resume.papers" ng-bind-html="paper"></li>
+            </ol>
+
+            <h3 id="educations" class="page-header" data-toggle="collapse" href="#collapseEducations">EDUCATION</h3>
+            <div class="collapse in" id="collapseEducations">
+                <div class="row" ng-repeat="education in vm.resume.educations">
+                    <div class="col-md-4">{{education.major}}</div>
+                    <div class="col-md-4">{{education.university}}</div>
+                    <div class="col-md-4"><p class="text-right-md">{{education.time}}</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <nav id="bs-docs-sidebar" class="bs-docs-sidebar hidden-print idden-xs hidden-sm">
+                <ul class="nav bs-docs-sidenav">
+                    <li><a class="sidebar" href="#resumename" scroll-to="resumename">Contact</a></li>
+                    <li><a class="sidebar" href="#profile" scroll-to="profile">Profile</a></li>
+                    <li><a class="sidebar" href="#experiences" scroll-to="experiences">Professional Experiences</a>
+                        <ul class="nav">
+                            <li ng-repeat="experience in vm.resume.experiences" ><a class="sidebar" href="#experience{{experience.index}}" scroll-to="experience{{experience.index}}">{{experience.company}}</a>
+                                <ul class="nav">
+                                    <li ng-repeat="project in experience.projects"><a class="sidebar" href="#project{{experience.index}}{{project.index}}" scroll-to="project{{experience.index}}{{project.index}}">{{project.name}}</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="sidebar" href="#skills" scroll-to="skills">Skills</a></li>
+                    <li><a class="sidebar" href="#papers" scroll-to="papers">Papers</a></li>
+                    <li><a class="sidebar" href="#educations" scroll-to="educations">Education</a></li>
+                </ul>
+                <a class="back-to-top" href="#top" scroll-to="top">Back to top</a>
+            </nav>
+        </div>
+    </div>
+</div>
+<footer class="bs-docs-footer"></footer>
+
+
+

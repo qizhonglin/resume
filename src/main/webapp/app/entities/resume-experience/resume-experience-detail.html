@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="resumeApp.resumeExperience.detail.title">Resume Experience</span> {{vm.resumeExperience.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="resumeApp.resumeExperience.index">Index</span></dt>
+        <dd>
+            <span>{{vm.resumeExperience.index}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperience.position">Position</span></dt>
+        <dd>
+            <span>{{vm.resumeExperience.position}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperience.company">Company</span></dt>
+        <dd>
+            <span>{{vm.resumeExperience.company}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperience.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.resumeExperience.startTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperience.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.resumeExperience.endTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeExperience.resume">Resume</span></dt>
+        <dd>
+            <a ui-sref="resume-detail({id:vm.resumeExperience.resume.id})">{{vm.resumeExperience.resume.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

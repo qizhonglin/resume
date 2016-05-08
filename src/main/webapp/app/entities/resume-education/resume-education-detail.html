@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="resumeApp.resumeEducation.detail.title">Resume Education</span> {{vm.resumeEducation.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="resumeApp.resumeEducation.major">Major</span></dt>
+        <dd>
+            <span>{{vm.resumeEducation.major}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeEducation.university">University</span></dt>
+        <dd>
+            <span>{{vm.resumeEducation.university}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeEducation.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.resumeEducation.startTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeEducation.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.resumeEducation.endTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="resumeApp.resumeEducation.resume">Resume</span></dt>
+        <dd>
+            <a ui-sref="resume-detail({id:vm.resumeEducation.resume.id})">{{vm.resumeEducation.resume.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
