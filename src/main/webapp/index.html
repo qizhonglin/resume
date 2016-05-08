@@ -42,11 +42,13 @@
     ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>-->
 
+
 <!-- build:js app/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
@@ -60,7 +62,6 @@
 <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
 <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
 <script src="bower_components/json3/lib/json3.js"></script>
 <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
@@ -68,14 +69,16 @@
 <!-- endbower -->
 <!-- endbuild -->
 
+<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+
 <!-- build:js app/app.js  -->
 <!-- inject:js -->
-<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 <script src="app/app.module.js"></script>
 <script src="app/account/reset/request/reset.request.state.js"></script>
 <script src="app/account/reset/request/reset.request.controller.js"></script>
 <script src="app/account/reset/finish/reset.finish.state.js"></script>
 <script src="app/account/reset/finish/reset.finish.controller.js"></script>
+<script src="app/services/user/user.service.js"></script>
 <script src="app/services/auth/register.service.js"></script>
 <script src="app/services/auth/principal.service.js"></script>
 <script src="app/services/auth/password.service.js"></script>
@@ -87,11 +90,9 @@
 <script src="app/services/auth/auth.jwt.service.js"></script>
 <script src="app/services/auth/activate.service.js"></script>
 <script src="app/services/auth/account.service.js"></script>
-<script src="app/services/user/user.service.js"></script>
 <script src="app/layouts/navbar/navbar.controller.js"></script>
 <script src="app/layouts/navbar/active-menu.directive.js"></script>
 <script src="app/layouts/navbar/active-link.directive.js"></script>
-<script src="app/layouts/error/error.state.js"></script>
 <script src="app/entities/resume-skill/resume-skill.state.js"></script>
 <script src="app/entities/resume-skill/resume-skill.service.js"></script>
 <script src="app/entities/resume-skill/resume-skill.search.service.js"></script>
@@ -99,6 +100,7 @@
 <script src="app/entities/resume-skill/resume-skill-dialog.controller.js"></script>
 <script src="app/entities/resume-skill/resume-skill-detail.controller.js"></script>
 <script src="app/entities/resume-skill/resume-skill-delete-dialog.controller.js"></script>
+<script src="app/layouts/error/error.state.js"></script>
 <script src="app/entities/resume-paper/resume-paper.state.js"></script>
 <script src="app/entities/resume-paper/resume-paper.service.js"></script>
 <script src="app/entities/resume-paper/resume-paper.search.service.js"></script>
@@ -113,13 +115,6 @@
 <script src="app/entities/resume-experience-project-accomplish/resume-experience-project-accomplish-dialog.controller.js"></script>
 <script src="app/entities/resume-experience-project-accomplish/resume-experience-project-accomplish-detail.controller.js"></script>
 <script src="app/entities/resume-experience-project-accomplish/resume-experience-project-accomplish-delete-dialog.controller.js"></script>
-<script src="app/entities/resume-experience-project/resume-experience-project.state.js"></script>
-<script src="app/entities/resume-experience-project/resume-experience-project.service.js"></script>
-<script src="app/entities/resume-experience-project/resume-experience-project.search.service.js"></script>
-<script src="app/entities/resume-experience-project/resume-experience-project.controller.js"></script>
-<script src="app/entities/resume-experience-project/resume-experience-project-dialog.controller.js"></script>
-<script src="app/entities/resume-experience-project/resume-experience-project-detail.controller.js"></script>
-<script src="app/entities/resume-experience-project/resume-experience-project-delete-dialog.controller.js"></script>
 <script src="app/entities/resume-experience/resume-experience.state.js"></script>
 <script src="app/entities/resume-experience/resume-experience.service.js"></script>
 <script src="app/entities/resume-experience/resume-experience.search.service.js"></script>
@@ -127,6 +122,13 @@
 <script src="app/entities/resume-experience/resume-experience-dialog.controller.js"></script>
 <script src="app/entities/resume-experience/resume-experience-detail.controller.js"></script>
 <script src="app/entities/resume-experience/resume-experience-delete-dialog.controller.js"></script>
+<script src="app/entities/resume-experience-project/resume-experience-project.state.js"></script>
+<script src="app/entities/resume-experience-project/resume-experience-project.service.js"></script>
+<script src="app/entities/resume-experience-project/resume-experience-project.search.service.js"></script>
+<script src="app/entities/resume-experience-project/resume-experience-project.controller.js"></script>
+<script src="app/entities/resume-experience-project/resume-experience-project-dialog.controller.js"></script>
+<script src="app/entities/resume-experience-project/resume-experience-project-detail.controller.js"></script>
+<script src="app/entities/resume-experience-project/resume-experience-project-delete-dialog.controller.js"></script>
 <script src="app/entities/resume-education/resume-education.state.js"></script>
 <script src="app/entities/resume-education/resume-education.service.js"></script>
 <script src="app/entities/resume-education/resume-education.search.service.js"></script>
@@ -142,8 +144,12 @@
 <script src="app/entities/resume/resume-dialog.controller.js"></script>
 <script src="app/entities/resume/resume-detail.controller.js"></script>
 <script src="app/entities/resume/resume-delete-dialog.controller.js"></script>
-<script src="app/components/login/login.service.js"></script>
-<script src="app/components/login/login.controller.js"></script>
+<script src="app/blocks/interceptor/notification.interceptor.js"></script>
+<script src="app/blocks/interceptor/errorhandler.interceptor.js"></script>
+<script src="app/blocks/interceptor/auth.interceptor.js"></script>
+<script src="app/blocks/interceptor/auth-expired.interceptor.js"></script>
+<script src="app/blocks/handlers/translation.handler.js"></script>
+<script src="app/blocks/handlers/state.handler.js"></script>
 <script src="app/components/util/truncate-words.filter.js"></script>
 <script src="app/components/util/truncate-characters.filter.js"></script>
 <script src="app/components/util/sort.directive.js"></script>
@@ -155,10 +161,18 @@
 <script src="app/components/util/data-util.service.js"></script>
 <script src="app/components/util/capitalize.filter.js"></script>
 <script src="app/components/util/base64.service.js"></script>
+<script src="app/blocks/config/translation.config.js"></script>
+<script src="app/blocks/config/translation-storage.provider.js"></script>
+<script src="app/blocks/config/localstorage.config.js"></script>
+<script src="app/blocks/config/http.config.js"></script>
+<script src="app/blocks/config/compile.config.js"></script>
+<script src="app/blocks/config/alert.config.js"></script>
 <script src="app/components/language/language.service.js"></script>
 <script src="app/components/language/language.filter.js"></script>
 <script src="app/components/language/language.controller.js"></script>
 <script src="app/components/language/language.constants.js"></script>
+<script src="app/components/login/login.service.js"></script>
+<script src="app/components/login/login.controller.js"></script>
 <script src="app/components/form/uib-pagination.config.js"></script>
 <script src="app/components/form/uib-pager.config.js"></script>
 <script src="app/components/form/show-validation.directive.js"></script>
@@ -168,18 +182,6 @@
 <script src="app/components/alert/alert.service.js"></script>
 <script src="app/components/alert/alert.directive.js"></script>
 <script src="app/components/alert/alert-error.directive.js"></script>
-<script src="app/blocks/interceptor/notification.interceptor.js"></script>
-<script src="app/blocks/interceptor/errorhandler.interceptor.js"></script>
-<script src="app/blocks/interceptor/auth.interceptor.js"></script>
-<script src="app/blocks/interceptor/auth-expired.interceptor.js"></script>
-<script src="app/blocks/handlers/translation.handler.js"></script>
-<script src="app/blocks/handlers/state.handler.js"></script>
-<script src="app/blocks/config/translation.config.js"></script>
-<script src="app/blocks/config/translation-storage.provider.js"></script>
-<script src="app/blocks/config/localstorage.config.js"></script>
-<script src="app/blocks/config/http.config.js"></script>
-<script src="app/blocks/config/compile.config.js"></script>
-<script src="app/blocks/config/alert.config.js"></script>
 <script src="app/admin/user-management/user-management.state.js"></script>
 <script src="app/admin/user-management/user-management.controller.js"></script>
 <script src="app/admin/user-management/user-management-dialog.controller.js"></script>
@@ -212,9 +214,9 @@
 <script src="app/account/password/password-strength-bar.directive.js"></script>
 <script src="app/account/activate/activate.state.js"></script>
 <script src="app/account/activate/activate.controller.js"></script>
+<script src="app/entities/entity.state.js"></script>
 <script src="app/home/home.state.js"></script>
 <script src="app/home/home.controller.js"></script>
-<script src="app/entities/entity.state.js"></script>
 <script src="app/admin/admin.state.js"></script>
 <script src="app/account/account.state.js"></script>
 <script src="app/app.state.js"></script>

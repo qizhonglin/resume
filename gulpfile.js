@@ -37,7 +37,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copy', function () {
-    return es.merge( 
+    return es.merge(
         gulp.src(config.app + 'i18n/**')
         .pipe(plumber({errorHandler: handleErrors}))
         .pipe(changed(config.dist + 'i18n/'))
